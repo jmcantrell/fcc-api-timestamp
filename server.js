@@ -23,8 +23,9 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
+const second = 1000;
 app.get("/api/timestamp/", function (req, res) {
-  let now = new Date();
+  let now = new Date(Date.now() + 20 * second);
   res.json({unix: now.getTime(), utc: now.toUTCString()})
 });
 
